@@ -15,7 +15,7 @@ function RoundImage({ ...props }) {
 
 function createHeading(level: number) {
     function Heading({ children }: { children: string }) {
-        let slug = toCustomCase(children);
+        const slug = toCustomCase(children);
         return createElement(`h${level}`, { id: slug }, children);
     }
     Heading.displayName = `Heading${level}`;

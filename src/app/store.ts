@@ -1,4 +1,3 @@
-import { createRef, RefObject } from 'react';
 import { create } from 'zustand';
 
 type ModalState = {

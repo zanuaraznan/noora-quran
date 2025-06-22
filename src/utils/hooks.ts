@@ -1,9 +1,16 @@
 import { useHeaderStore } from '@/app/store';
-import { RefObject, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import {
+    DependencyList,
+    RefObject,
+    useEffect,
+    useLayoutEffect,
+    useRef,
+    useState,
+} from 'react';
 
 function useClickOutside<T extends HTMLElement>(
     handler: () => void,
-    dependencies: any[] = []
+    dependencies: DependencyList
 ): RefObject<T> {
     const ref = useRef<T>(null as unknown as T);
 

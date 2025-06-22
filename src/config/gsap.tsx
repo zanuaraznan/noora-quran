@@ -10,7 +10,7 @@ export default function WithGSAP() {
     useGSAP(() => {
         const splitTargets = gsap.utils.toArray('.split');
         splitTargets.forEach((el) => {
-            let target = el as HTMLElement;
+            const target = el as HTMLElement;
             const split = new SplitText(target, {
                 type: 'words,lines',
                 mask: 'lines',

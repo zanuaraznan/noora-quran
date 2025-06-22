@@ -12,7 +12,7 @@ export default function Logo() {
                 height={36}
                 alt={siteConfig.title}
             />
-            <h2 className='font-semibold text-xl playfair'>Noora Qur'an</h2>
+            <h2 className='font-semibold text-xl playfair'>Noora Qur&apos;an</h2>
         </Link>
     );
 }
