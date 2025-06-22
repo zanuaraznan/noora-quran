@@ -5,7 +5,7 @@ import Container from '@/components/ui/Container';
 
 export const dynamicParams = false;
 
-type Params = { slug: string };
+type Params = Promise<{ slug: string }>;
 
 export async function generateStaticParams() {
     const contents = await getAllContent();
@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Params }) {
     const contents = await getAllContent();
-    const { slug } = params;
+    const { slug } = await params;
     const content = contents.find((content) => content.slug === slug);
     if (!content) return notFound();
 
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Params }) {
 
 export default async function Page({ params }: { params: Params }) {
     const contents = await getAllContent();
-    const { slug } = params;
+    const { slug } = await params;
     const content = contents.find((content) => content.slug === slug);
     if (!content) return notFound();
 
