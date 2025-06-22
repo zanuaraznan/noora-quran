@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Params }) {
     const contents = await getAllContent();
-    const { slug } = await params;
+    const { slug } = params;
     const content = contents.find((content) => content.slug === slug);
     if (!content) return notFound();
 
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Params }) {
 
 export default async function Page({ params }: { params: Params }) {
     const contents = await getAllContent();
-    const { slug } = await params;
+    const { slug } = params;
     const content = contents.find((content) => content.slug === slug);
     if (!content) return notFound();
 
